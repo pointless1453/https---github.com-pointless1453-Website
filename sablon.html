@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sablon</title>
+    <style>
+        *{                                      /* tüm her yerde geçerli olan kod satırı başlığı */
+            margin: 0;
+            padding: 0;
+            user-select: none;                  /* fare ile seçme kopyalama işini iptal eder*/
+            box-sizing: border-box;             /* borderlar içeri kısımda oluyor */
+        }
+        body {
+            background-color: #f0f2f5;
+        }
+        .dikdortgen{
+            border-style: solid;
+            border-width: 2px;
+            border-color: black;
+            margin-bottom: 20px;
+        }
+        #header{
+            height: 160px;
+            background-color: aqua;
+            position: fixed;                    /* ekranda sabit kalmasını sağlar */
+            z-index: 1000;                      /* katman olarak en tepede olmasını sağlar */
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        #spotlight{
+            margin-top: 180px;
+            top: 200px;
+            width: 100%;
+            height: 800px;
+            background-color: chartreuse;
+        }
+        #container-main{
+            
+            width: 100%;
+            height: auto;
+            padding-bottom: 20px;
+            background-color: deeppink;
+            margin-bottom: 20px;
+        }
+        .yardimci-baslik{
+            margin: 20px auto 0;
+            width: 200px;
+            height: 50px;
+            background-color: blueviolet;
+        }
+        .products-bar{
+            width: 95%;
+            height: 300px;
+            margin: 20px auto 0;
+            display: flex;                      /* ürünlerin yan yana sıralanmasını sağlar */
+        }
+        .products{
+            background-color: crimson;
+            width: 200px;
+            height: 250px;
+            margin-top: 20px;
+            margin-left: 20px;
+            gap: 20px;
+        }
+        .product-img{
+            margin: 10px;
+            height: 175px;
+            background-color: darkkhaki;
+        }
+        .product-header{
+            background-color:red ;
+        }
+        #footer{
+            height: 392.08px;
+            background-color: darkgoldenrod;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header" class="dikdortgen"></div>
+    <div id="spotlight" class="dikdortgen"></div>
+    <div id="container-main" class="dikdortgen">
+        <div class="yardimci-baslik dikdortgen"></div>
+        <div class="products-bar dikdortgen">
+            <div class="products">
+                <div class="product-img"></div>
+                <div class="product-header"></div>
+                <div class="product-price"></div>
+                <div class="prodact-add"></div>
+            </div>
+            <div class="products">
+                <div class="product-img"></div>
+                <div class="product-header"></div>
+                <div class="product-price"></div>
+                <div class="prodact-add"></div>
+            </div>
+            <div class="products">
+                <div class="product-img"></div>
+                <div class="product-header"></div>
+                <div class="product-price"></div>
+                <div class="prodact-add"></div>
+            </div>
+            <div class="products">
+                <div class="product-img"></div>
+                <div class="product-header"></div>
+                <div class="product-price"></div>
+                <div class="prodact-add"></div>
+            </div>
+            <div class="products">
+                <div class="product-img"></div>
+                <div class="product-header"></div>
+                <div class="product-price"></div>
+                <div class="prodact-add"></div>
+            </div>
+            <div class="products">
+                <div class="product-img"></div>
+                <div class="product-header"></div>
+                <div class="product-price"></div>
+                <div class="prodact-add"></div>
+            </div>
+            <div class="products">
+                <div class="product-img"></div>
+                <div class="product-header"></div>
+                <div class="product-price"></div>
+                <div class="prodact-add"></div>
+            </div>
+            <div class="products">
+                <div class="product-img"></div>
+                <div class="product-header"></div>
+                <div class="product-price"></div>
+                <div class="prodact-add"></div>
+            </div>
+        </div>
+        <div class="yardimci-baslik dikdortgen"></div>
+        <div class="products-bar dikdortgen"></div>
+    </div>
+    <div id="footer" class="dikdortgen"></div>
+</body>
+</html>

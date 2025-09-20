@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mağaza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Online mağazamızda en yeni ve en çok satan ürünleri keşfedin: anahtarlıklar, figürler, aksesuarlar ve kozmetik ürünler.">
+    <meta name="keywords" content="online mağaza, e-ticaret, anahtarlık, figür, aksesuar, kozmetik, ürünler, uygun fiyatlı ürünler">   
+    <link rel="stylesheet" href="/public/css/style.css">
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/views/partials/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('header-placeholder').innerHTML = html; 
+                    const currentPath = window.location.pathname.split('/').pop();
+                    const kategoriLinks = document.querySelectorAll('.kategori-link');
+
+                    kategoriLinks.forEach(link => {
+                        if (link.classList.contains('active')) {
+                            link.classList.remove('active');
+                        }
+                        const linkHref = link.getAttribute('href');
+                        if (linkHref === currentPath || (currentPath === '' && linkHref === 'main.html')) {
+                            link.classList.add('active');
+                        }
+                    });
+                })                
+            fetch('/views/partials/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                })
+            fetch('/views/partials/spotlights.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('spotlights-placeholder').innerHTML = html;
+                })
+        });
+    </script>
+
+    <div id="header-placeholder"></div>
+
+    <div id="spotlights-placeholder"></div>
+
+    <div id="main">
+        <h2 class="yardimci-baslik">Yeni Ürünler</h2>
+        <div id="yeni-urunler-kapsayici" class="urunler-grid"></div>
+        <h2 class="yardimci-baslik">İndirimli Ürünler</h2>
+        <div id="indirimli-urunler-kapsayici" class="urunler-grid"></div>
+        <!--<h2 class="yardimci-baslik">En Çok Satanlar</h2>
+        <div id="encoksatanlar-urunler-kapsayici" class="urunler-grid"></div> BURASI İLERİDE OLUCAK -->
+    </div>      
+
+    <div id="footer-placeholder"></div>
+    
+    <script src="/public/js/script.js"></script>
+</body>
+</html>

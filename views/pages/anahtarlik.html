@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mağaza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Online mağazamızda en yeni ve en çok satan ürünleri keşfedin: anahtarlıklar, figürler, aksesuarlar ve kozmetik ürünler.">
+    <meta name="keywords" content="online mağaza, e-ticaret, anahtarlık, figür, aksesuar, kozmetik, ürünler, uygun fiyatlı ürünler">   
+    <link rel="stylesheet" href="/public/css/style.css">
+    <style>
+        #main{
+            margin-top: 190px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/views/partials/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('header-placeholder').innerHTML = html;
+                    const currentPath = window.location.pathname.split('/').pop();
+                    const kategoriLinks = document.querySelectorAll('.kategori-link');
+
+                    kategoriLinks.forEach(link => {
+                        if (link.classList.contains('active')) {
+                            link.classList.remove('active');
+                        }
+                        const linkHref = link.getAttribute('href');
+                        if (linkHref === currentPath || (currentPath === '' && linkHref === 'main.html')) {
+                            link.classList.add('active');
+                        }
+                    });
+                })                
+            fetch('/views/partials/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                })
+            fetch('/views/partials/filter.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('filter-placeholder').innerHTML = html;
+                })
+        });
+    </script>
+
+    <div id="header-placeholder"></div>
+
+    <div id="main">
+        <div id="filtre">
+            <div id="filter-placeholder"></div>
+        </div>            
+        <div id="ürünler" style="background-color: aqua;">
+            
+        </div>
+    </div>      
+
+    <div id="footer-placeholder"></div>
+    
+    <script src="/public/js/script.js"></script>
+</body>
+</html>

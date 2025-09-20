@@ -1,0 +1,163 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<header>
+    <div id="header-main-row">
+        <a href="main.html" id="site-baslik">
+        <h1>Online Mağaza</h1>
+        </a>
+        <div class="search-bar">
+            <input type="text" id="arama-input" placeholder="Aramak istediğiniz ürünü buraya yazabilirsiniz">
+            <button id="arama-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-ikon-grubu">
+            <a href="favoriler.html" class="header-ikon">
+                <i class="fas fa-heart"></i> 
+            </a>
+            <a href="sepet.html" class="header-ikon">
+                <i class="fas fa-shopping-cart"></i> 
+            </a>
+            <a href="giris.html" class="header-ikon">
+                <i class="fas fa-user-circle"></i> 
+            </a>
+        </div>
+    </div>
+    <nav>
+        <a href="tum-urunler.html" class="kategori-link" data-kategori="tum-urunler">Tüm Ürünler</a>
+        <a href="anahtarlik.html" class="kategori-link" data-kategori="anahtarlik">Anahtarlık</a>
+        <a href="figur.html" class="kategori-link" data-kategori="figur">Figür</a>
+        <a href="aksesuar.html" class="kategori-link" data-kategori="aksesuar">Aksesuar</a>
+        <a href="kozmetik.html" class="kategori-link" data-kategori="kozmetik">Kozmetik</a>
+    </nav>
+</header>
+<style>    
+    header {
+        background-color: #ffffff;
+        color: #333;
+        padding: 20px 40px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+    #header-main-row {
+        gap: 50px;    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto; 
+        padding-bottom: 20px;
+    }
+    #site-baslik{
+        text-decoration: none;
+        color: inherit;
+        flex-shrink: 0; 
+    }
+    header h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: #007bff;
+        margin: 0;
+        transition: transform 0.3s ease;
+    }
+    header h1:hover {
+        transform: scale(1.05);
+    }
+    .search-bar{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        width: 700px; 
+        max-width: 100%;
+        background-color: #f0f2f5;
+        border-radius: 25px;
+        padding: 5px;
+        border: 2px solid #e0e0e0;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    .search-bar:focus-within {
+        border-color: #007bff;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+    }
+    #arama-input {
+        flex-grow: 1;
+        border: none;
+        background: transparent;
+        padding: 8px 15px;
+        font-size: 1rem;
+        color: #333;
+        outline: none;
+    }
+    #arama-input::placeholder {
+        color: #888;
+    }
+    #arama-btn {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease, transform 0.1s ease;
+    }
+    #arama-btn:hover {
+        background-color: #0056b3;
+    }
+    #arama-btn:active {
+        transform: scale(0.95);
+    }
+    .header-ikon-grubu {
+        display: flex;
+        gap: 20px; 
+        align-items: center; 
+        flex-shrink: 0; 
+    }
+    .header-ikon {
+        color: #007bff; 
+        font-size: 2.5rem; 
+        text-decoration: none; 
+        transition: color 0.3s ease, transform 0.2s ease;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+    }
+    .header-ikon:hover {
+        color: #0056b3; 
+        transform: scale(1.1); 
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-shrink: 0;
+        margin: 0 auto;
+    }
+    .kategori-link {
+        text-decoration: none;
+        color: #555;
+        font-weight: 600;
+        font-size: 1.1rem;
+        padding: 8px 15px;
+        border-radius: 25px;
+        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+        border: 2px solid transparent;
+    }
+    .kategori-link:hover {
+        background-color: #e2e6ea;
+        color: #007bff;
+        transform: translateY(-3px);
+    }
+    .kategori-link.active {
+        background-color: #007bff;
+        color: #ffffff;
+        border-color: #007bff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    }
+</style>
